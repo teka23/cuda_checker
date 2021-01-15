@@ -1,0 +1,17 @@
+version: 2.1
+
+jobs:
+  test-cuda-on-machine:
+    machine: true
+    steps:
+      - checkout
+      - run: |
+          python3 -m venv venv
+          . ./venv/bin/activate
+          pip install -r requirements.txt
+          python main.py
+
+workflows:
+  test:
+    jobs:
+      - test-cuda-on-machine
