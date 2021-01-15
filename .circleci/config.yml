@@ -6,6 +6,8 @@ jobs:
     steps:
       - checkout
       - run: |
+          pyenv global 3.5.2
+          eval "$(pyenv init -)"
           python3 -m venv venv
           . ./venv/bin/activate
           pip install -r requirements.txt
