@@ -2,11 +2,12 @@ version: 2.1
 
 jobs:
   test-cuda-on-machine:
-    machine: true
+    machine:
+      image: ubuntu-2004:202010-01
     steps:
       - checkout
       - run: |
-          pyenv global 3.5.2
+          pyenv global 3.8.2
           eval "$(pyenv init -)"
           pip install --upgrade pip
           pip install -r requirements.txt
